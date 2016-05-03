@@ -15,11 +15,11 @@ CACHE_FILE="$CACHE_DIR/libjpeg.tar.gz"
 
 if [ ! -f $CACHE_FILE ]; then
   # install libjpeg
-  LIBJPEG_VERSION="${LIBJPEG_VERSION:-v8d}"
-  LIBJPEG_FILE="jpegsrc.$LIBJPEG_VERSION.tar.gz"
-  LIBJPEG_DIR="jpegsrc.$LIBJPEG_VERSION"
+  LIBJPEG_VERSION="${LIBJPEG_VERSION:-8d}"
+  LIBJPEG_FILE="jpegsrc.v$LIBJPEG_VERSION.tar.gz"
+  LIBJPEG_DIR="jpeg-$LIBJPEG_VERSION"
   # SSL cert used on libjpeg not recognized by heroku.
-  LIBJPEG_URL="http://www.ijg.org/files/jpegsrc.$LIBJPEG_VERSION.tar.gz"
+  LIBJPEG_URL="http://www.ijg.org/files/jpegsrc.v$LIBJPEG_VERSION.tar.gz"
 
   echo "-----> Downloading libjpeg from $LIBJPEG_URL"
   wget $LIBJPEG_URL -P $BUILD_DIR | indent
